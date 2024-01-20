@@ -1,9 +1,14 @@
 body {
     background-color: rgba(255, 0, 0, 0.416);
-    margin-left: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 h1 {
     text-align: center;
     text-decoration: underline;
     text-decoration: bold;
+}
+p {
+    margin-left: 150px;
+    margin-right: 150px;
 }
