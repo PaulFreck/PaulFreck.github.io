@@ -1,3 +1,9 @@
 body {
-    background-color: lightblue;
-  }
+    background-color: rgba(255, 0, 0, 0.416);
+    margin-left: 80px;
+}
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration: bold;
+}
