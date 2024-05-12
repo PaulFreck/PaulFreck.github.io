@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(255, 0, 0, 0.416);
+    background-color: #c5050c; /*offical UW madison color*/
     margin-left: 25%;
     margin-right: 25%;
 }
@@ -13,8 +13,11 @@ p {
     margin-right: 20px;
 }
 main{
-    margin:0 auto 2rem;
-    width:50rem;
+    background-color: #e9d4bd; /*offical UW madison color*/
+    margin:0 auto 10%;
+    width:100%;
     justify-content:center;
-    padding:1rem
+    padding:1rem;
+    /*height: 96%;  /*will be used when i have more to put on site*/
 }
+html,body { height: 96%; }
