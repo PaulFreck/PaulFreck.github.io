@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<head>
-    <script src="rockGame.js"></script>
-</head>
-<body>
-    <h>Rocks </h> <h id="num_rocks">0</h> <h id="label_shiny_rocks" hidden="true">Shiny Rock</h> <h hidden="true" id="num_shiny_rocks">0</h>
-    <br>
-    <button onclick="makeRock(1)">Gather rock.</button>
-</body>
+<html>
+    <head>
+        <meta name="author" value="Paul Freck"/>
+        <script src="rockGame.js"></script>
+        <title>Rock Game</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+    </head>
+    <body>
+        <div id="Counters"></div>
+            <h>Rocks <h id="num_rocks">0</h></h>  
+            <h id="shiny_rocks" hidden="true">Shiny Rock <h id="num_shiny_rocks">0</h> </h> 
+        <div id="Gathering">
+            <br>
+            <button onclick="makeRock(1)">Gather rock.</button>
+        </div>
+        <div id="Research" hidden="true">
+            <button onclick="improveManualButton(1)"><div class="Button Title">Gather More, Smaller Rocks</div> <div class="Button Description"> Improves the Gather Rocks button.</div></button>
+        </div>
+    </body>
+</html>

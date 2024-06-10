@@ -5,9 +5,9 @@ function makeRock(rocks)
     {
         var target = "num_shiny_rocks"
         if (found_shiny_rock) //because we're only doing this once (and know when the variables are) we can do something like this rather than going through the whole proccess of finding if it's hidden or not.
-            document.getElementById("num_shiny_rocks").hidden = false
-            document.getElementById("label_shiny_rocks").hidden = false
+            document.getElementById("shiny_rocks").hidden = false
             found_shiny_rock = false
+            showResearch()
     }
     else {var target = "num_rocks"}
     document.getElementById(target).innerHTML = rocks + parseInt(document.getElementById(target).innerHTML);
@@ -21,4 +21,14 @@ function determineIfShiny()
         return true;
     else
         return false;
+} 
+
+function showResearch()
+{
+    document.getElementById("Research").hidden = false
+}
+
+function improveManualButton(amount)
+{
+
 }
