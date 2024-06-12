@@ -1,5 +1,6 @@
 var found_shiny_rock = true
-function makeRock(rocks)
+var manual_rocks = 1
+function makeRock()
 {
     if (determineIfShiny())
     {
@@ -10,14 +11,14 @@ function makeRock(rocks)
             showResearch()
     }
     else {var target = "num_rocks"}
-    document.getElementById(target).innerHTML = rocks + parseInt(document.getElementById(target).innerHTML);
+    document.getElementById(target).innerHTML = manual_rocks + parseInt(document.getElementById(target).innerHTML);
 }
 
 function determineIfShiny()
 {
     const minCeiled = Math.ceil(1);
     const maxFloored = Math.floor(11);
-    if((Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled)) % 10 == 0)
+    if((Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled)) % 1 == 0)
         return true;
     else
         return false;
@@ -28,7 +29,10 @@ function showResearch()
     document.getElementById("Research").hidden = false
 }
 
-function improveManualButton(amount)
+function improveManualButton(amount, cost)
 {
-
+    if (document.getElementById("num_rocks").innerHTML > cost)
+    {
+        manual_rocks += amount
+    }
 }
