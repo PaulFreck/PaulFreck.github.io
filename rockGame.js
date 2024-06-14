@@ -10,13 +10,14 @@ function makeRock()
 
 function updateRockCount(amount)
 {
-    if (determineIfShiny())
+    if (shiny())
     {
         var target = "num_shiny_rocks"
-        if (found_shiny_rock){ //because we're only doing this once (and know when the variables are) we can do something like this rather than going through the whole proccess of finding if it's hidden or not.
-            document.getElementById("shiny_rocks").hidden = false
+        if (found_shiny_rock){ 
+            unHide("shiny_rocks")
             found_shiny_rock = false
-            showResearch()
+            unHide("research")
+            unHide("rock_enthusiast") //I could do this all by a class, but i feel that this allows for me to select them in the future if need be
         }
     }
     else {var target = "num_rocks"}
@@ -24,20 +25,15 @@ function updateRockCount(amount)
     document.getElementById(target).innerHTML = amount + parseInt(document.getElementById(target).innerHTML);
 }
 
-function determineIfShiny()
+function shiny()
 {
     const minCeiled = Math.ceil(1);
     const maxFloored = Math.floor(11);
-    if((Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled)) % 2 == 0)
+    if((Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled)) % 10 == 0)
         return true;
     else
         return false;
 } 
-
-function showResearch()
-{
-    document.getElementById("Research").hidden = false
-}
 
 function improveManualButton(amount, cost)
 {
@@ -51,11 +47,22 @@ async function automaticGatherer(amount, cost)
 {
     if (document.getElementById("num_shiny_rocks").innerHTML > cost)
     {
-        rock_gatherers += amount
+        updateEnthusiastCount(amount)
     }
 }
 
 function gatherRockCallback()
 {
     updateRockCount(rock_gatherers)
+}
+
+function unHide(id)
+{
+    document.getElementById(id).hidden = false
+}
+
+function updateEnthusiastCount(amount)
+{
+    rock_gatherers += amount
+    document.getElementById("num_rock_enthusiasts").innerHTML = rock_gatherers
 }
