@@ -2,6 +2,7 @@ var found_shiny_rock = true
 var manual_rocks = 1
 var rock_gatherers = 0
 var intervalID = window.setInterval(gatherRockCallback, 1000);
+var progressToShiny = 0
 
 function makeRock()
 {
@@ -10,9 +11,11 @@ function makeRock()
 
 function updateRockCount(amount)
 {
-    if (shiny())
+    shinyAmount = shiny(amount)
+    console.log(shinyAmount)
+    if (shinyAmount >= 1)
     {
-        var target = "num_shiny_rocks"
+        document.getElementById("shiny_rocks").innerHTML = amount + parseInt(document.getElementById("shiny_rocks").innerHTML) - shinyAmount;
         if (found_shiny_rock){ 
             unHide("shiny_rocks")
             found_shiny_rock = false
@@ -20,19 +23,25 @@ function updateRockCount(amount)
             unHide("rock_enthusiast") //I could do this all by a class, but i feel that this allows for me to select them in the future if need be
         }
     }
-    else {var target = "num_rocks"}
-
-    document.getElementById(target).innerHTML = amount + parseInt(document.getElementById(target).innerHTML);
+    document.getElementById("num_rocks").innerHTML = amount + parseInt(document.getElementById("num_rocks").innerHTML) - shinyAmount;
 }
 
-function shiny()
+function shiny(amount)
 {
-    const minCeiled = Math.ceil(1);
-    const maxFloored = Math.floor(11);
-    if((Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled)) % 10 == 0)
-        return true;
-    else
-        return false;
+    const minCeiled = Math.ceil(0);
+    const maxFloored = Math.floor(18);
+    percent = Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled) / 100
+    if ((percent * amount) + progressToShiny< 1)
+    {
+        progressToShiny += percent * amount
+        return 0;
+    }
+    else{
+        toReturn = Math.round(percent * amount + progressToShiny)
+        progressToShiny = 0
+        console.log(toReturn)
+        return toReturn
+    }
 } 
 
 function improveManualButton(amount, cost)
