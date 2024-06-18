@@ -12,10 +12,10 @@ function makeRock()
 function updateRockCount(amount)
 {
     shinyAmount = shiny(amount)
-    console.log(shinyAmount)
+    console.log(parseInt(document.getElementById("num_shiny_rocks").innerHTML) + shinyAmount)
     if (shinyAmount >= 1)
     {
-        document.getElementById("shiny_rocks").innerHTML = amount + parseInt(document.getElementById("shiny_rocks").innerHTML) - shinyAmount;
+        document.getElementById("num_shiny_rocks").innerHTML = parseInt(document.getElementById("num_shiny_rocks").innerHTML) + shinyAmount;
         if (found_shiny_rock){ 
             unHide("shiny_rocks")
             found_shiny_rock = false
