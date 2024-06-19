@@ -15,8 +15,8 @@ function updateRockCount(amount)
     shinyAmount = shiny(amount)
     if (shinyRocks >= 1)
     {
-        document.getElementById("num_shiny_rocks").innerHTML = Math.round(shinyRocks);
-        if (found_shiny_rock){ 
+        document.getElementById("num_shiny_rocks").innerHTML = Math.round(shinyRocks); 
+        if (found_shiny_rock){  //can be simplified?
             unHide("shiny_rocks")
             found_shiny_rock = false
             unHide("research")
@@ -41,6 +41,8 @@ function improveManualButton(amount, cost)
 {
     if (document.getElementById("num_shiny_rocks").innerHTML >= cost)
     {
+        shinyRocks -= cost
+        document.getElementById("num_shiny_rocks").innerHTML = Math.round(shinyRocks);
         manual_rocks += amount
     }
 }
@@ -49,6 +51,8 @@ async function automaticGatherer(amount, cost)
 {
     if (document.getElementById("num_shiny_rocks").innerHTML >= cost)
     {
+        shinyRocks -= cost
+        document.getElementById("num_shiny_rocks").innerHTML = Math.round(shinyRocks);
         updateEnthusiastCount(amount)
     }
 }
