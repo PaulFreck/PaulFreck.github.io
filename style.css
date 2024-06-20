@@ -11,10 +11,18 @@ h{
     max-height: 100dvh;
     margin: auto;
 }
-#Reseach{
-   
-    padding: 10px;
-    margin: 10px;
-      
+#research{
+    
+    max-width: fit-content;
+    margin-left: auto;
 }
 p { display: inline }
+#gather_rock{
+    font-size: large;
+}
+#topStuff{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}

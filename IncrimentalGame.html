@@ -9,20 +9,23 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
     <body>
+        <div id="topStuff">
         <div id="Rock Counters">
             <h>Rocks <h id="num_rocks">0</h></h>  
             <h id="shiny_rocks" hidden="true">Shiny Rock <h id="num_shiny_rocks">0</h> </h>
         </div>
-            <div id="">
-                <h id="rock_enthusiast" hidden="true">Rock Enthusiats <p id="num_rock_enthusiasts">0</p></h> <!--A bit jarring currently, will try to put this somewhere else maybe? Make RockCount it's own thing?-->
-            </div> 
+        <div id="research" hidden="true">
+            <button onclick="improveManualButton(1, 10)"><div class="Button Title">Gather More, Smaller Rocks:</div> <div class="Button Description"> Improves The Gather Rocks Button.</div></button>
+            <button onclick="automaticGatherer(1, 10)"><div class="Button Title">Hire Rock Enthusiast:</div> <div class="Button Description"> Hire Rock Enthusiats to Gather Rocks </div></button>
+        </div>
+        </div>
+        <div id="">
+            <h id="rock_enthusiast" hidden="true">Rock Enthusiats <p id="num_rock_enthusiasts">0</p></h>
+        </div>
+         
         <div id="Gathering">
             <br>
             <button id="gather_rock" onclick="makeRock()">Gather rock.</button>
-            <div id="research" hidden="true">
-                <button onclick="improveManualButton(1, 10)"><div class="Button Title">Gather More, Smaller Rocks</div> <div class="Button Description"> Improves The Gather Rocks Button.</div></button>
-                <button onclick="automaticGatherer(1, 10)"><div class="Button Title">Hire Rock Enthusiast</div> <div class="Button Description"> Hire Rock Enthusiats to Gather Rocks </div></button>
-            </div>
         </div>
     
     </body>
