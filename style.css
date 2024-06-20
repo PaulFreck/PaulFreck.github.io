@@ -2,6 +2,9 @@ body {
     background-color: #c5050c; /*offical UW madison color*/
     margin-left: 25%;
     margin-right: 25%;
+    display: block;
+    margin: 1em auto;
+    max-width: 46em;
 }
 h1 {
     text-align: center;
