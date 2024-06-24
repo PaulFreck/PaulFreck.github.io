@@ -37,21 +37,25 @@ function shiny(amount)
     return percent * amount
 } 
 
-function improveManualButton(amount, cost)
+function improveManualButton(amount)
 {
-    if (document.getElementById("num_shiny_rocks").innerHTML >= cost)
+    var cost = document.getElementById("manual_cost").innerHTML
+    if (Number(document.getElementById("num_shiny_rocks").innerHTML) >= Number(cost))
     {
         shinyRocks -= cost
+        document.getElementById("manual_cost").innerHTML *= 2
         document.getElementById("num_shiny_rocks").innerHTML = Math.round(shinyRocks);
         manual_rocks += amount
     }
 }
 
-async function automaticGatherer(amount, cost)
+async function automaticGatherer(amount)
 {
-    if (document.getElementById("num_shiny_rocks").innerHTML >= cost)
+    var cost = document.getElementById("rock_enthusiast_cost").innerHTML
+    if (Number(document.getElementById("num_shiny_rocks").innerHTML) >= Number(cost))
     {
         shinyRocks -= cost
+        document.getElementById("rock_enthusiast_cost").innerHTML *= 2
         document.getElementById("num_shiny_rocks").innerHTML = Math.round(shinyRocks);
         updateEnthusiastCount(amount)
     }
