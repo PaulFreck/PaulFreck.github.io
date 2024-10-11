@@ -1,0 +1,27 @@
+h{
+    font-weight: bold;
+    font-size: x-large;
+}
+#Gathering{
+    position: fixed;
+    inset: 0px;
+    width: 12rem;
+    height: 30rem;
+    max-width: 100vw;
+    max-height: 100dvh;
+    margin: auto;
+}
+#research{
+    max-width: fit-content;
+    margin-left: auto;
+}
+p { display: inline }
+#gather_rock{
+    font-size: large;
+}
+#topStuff{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
