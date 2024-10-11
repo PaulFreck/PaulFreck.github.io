@@ -24,7 +24,7 @@ function updateRockCount(amount)
         }
     }
     regularRocks += (amount) //-shinyAmount
-    console.log(regularRocks)
+   // console.log(regularRocks)
     document.getElementById("num_rocks").innerHTML = Math.round(regularRocks); //-shinyAmount
 }
 
