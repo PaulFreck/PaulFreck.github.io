@@ -37,7 +37,7 @@
        <img src="SMB3_Decrypt.png">
        <p>You see, when Wireshark's NTLMSSP's protocol settings are provided a good passcode, Wireshark will automatically decrypt your SMB (provided you have the initial TCP handshake)</p>
        <img src="SMB3_Decrypted_Wireshark.png">
-       <p>and, if you look closely, you can see the same ADMIN$ request as we had previously! This means that our detection method would work if you enforced SMB2 on your computers, or if you could somehow decrypt the traffic before feeding it to Suricata. Also to note, secretsdump sends outW the same connection, and will be caught by this alarm as well.</p>
+       <p>If you look closely, you can see the same ADMIN$ request as we had previously! This means that our detection method would work if you enforced SMB2 on your computers, or if you could somehow decrypt the traffic before feeding it to Suricata. Also to note, secretsdump sends outW the same connection, and will be caught by this alarm as well.</p>
        <p>At this point, I had done about everything I set out to do, and was about out of time, so that'll be all for my foray into this topic. Perhaps there are some better ways I could have done detection for the encrypted version of this problem, and I almost certainly could have found something better to set up my unencrypted alarm, but I had run out of time for experiments due to school starting up, so I had to shelve the project, at least till next summer.</p>
     </main>
 </body>
