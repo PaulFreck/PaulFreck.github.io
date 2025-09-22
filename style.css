@@ -24,4 +24,8 @@ main{
     /*height: 96%;  /*will be used when i have more to put on site*/
 }
 html,body { height: 96%; }
-
+code {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 2px solid;
+}
